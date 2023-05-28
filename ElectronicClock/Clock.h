@@ -3,9 +3,7 @@
 #include <chrono>
 #include <ctime>
 #include <memory>
-
-using namespace std;
-using namespace std::chrono;
+#include "constants.h"
 
 class Clock
 {
@@ -14,7 +12,7 @@ public:
 	void tick();
 	int getHours();
 	int getMinutes();
-	unique_ptr<int[]> getClockDigits();
+	std::unique_ptr<int[]> getClockDigits();
 
 private:
 	int hours;

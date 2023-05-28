@@ -128,19 +128,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Clock.cpp" />
+    <ClCompile Include="ClockDigit.cpp" />
+    <ClCompile Include="ClockDigitFactory.cpp" />
+    <ClCompile Include="Controller.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="clockdesign.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="uml.drawio" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Clock.h" />
     <ClInclude Include="ClockDigit.h" />
+    <ClInclude Include="ClockDigitFactory.h" />
     <ClInclude Include="ClockDrawer.h" />
-    <ClInclude Include="clockFrontConstants.h" />
+    <ClInclude Include="Controller.h" />
+    <ClInclude Include="constants.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="uml-classes.drawio" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
