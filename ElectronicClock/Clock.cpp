@@ -27,7 +27,11 @@ int Clock::getMinutes()
 	return minutes;
 }
 
-unique_ptr<int[]> Clock::getTimeDigits()
+/// <summary>
+/// Splits hours and mins into a digits
+/// </summary>
+/// <returns> Unique ptr on an array int[4] </returns>
+unique_ptr<int[]> Clock::getClockDigits()
 {
 	unique_ptr<int[]> digits(new int[4] {hours / 10, hours % 10, minutes / 10, minutes % 10});
 	return digits;

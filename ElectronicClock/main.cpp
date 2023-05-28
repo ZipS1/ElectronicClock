@@ -4,10 +4,8 @@
 
 int main()
 {
-	Clock* clock = new Clock();
-	unique_ptr<int[]> digits = clock->getTimeDigits();
+	unique_ptr<Clock> clock(new Clock());
+	unique_ptr<int[]> digits = clock->getClockDigits();
 	for (int i = 0; i < 4; i++)
 		cout << digits[i] << " " << endl;
-	
-	delete clock;
 }

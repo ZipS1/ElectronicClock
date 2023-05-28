@@ -14,7 +14,7 @@ public:
 	void tick();
 	int getHours();
 	int getMinutes();
-	unique_ptr<int[]> getTimeDigits();
+	unique_ptr<int[]> getClockDigits();
 
 private:
 	int hours;
