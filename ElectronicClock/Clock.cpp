@@ -27,8 +27,7 @@ int Clock::getMinutes()
 	return minutes;
 }
 
-std::unique_ptr<int[]> Clock::getClockDigits()
+std::vector<int> Clock::getClockDigits()
 {
-	std::unique_ptr<int[]> digits(new int[DIGITS_AMOUNT] {hours / 10, hours % 10, minutes / 10, minutes % 10, seconds / 10, seconds % 10});
-	return digits;
+	return std::vector<int> {hours / 10, hours % 10, minutes / 10, minutes % 10, seconds / 10, seconds % 10};
 }

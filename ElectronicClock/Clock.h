@@ -2,7 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <chrono>
 #include <ctime>
-#include <memory>
+#include <vector>
 #include "constants.h"
 
 class Clock
@@ -12,7 +12,7 @@ public:
 	void tick();
 	int getHours();
 	int getMinutes();
-	std::unique_ptr<int[]> getClockDigits();
+	std::vector<int> getClockDigits();
 
 private:
 	int hours;

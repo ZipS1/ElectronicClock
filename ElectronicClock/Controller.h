@@ -1,4 +1,5 @@
 #pragma once
+#include <thread>
 #include "Clock.h"
 #include "ClockDrawer.h"
 
@@ -7,8 +8,9 @@ class Controller
 public:
 	Controller();
 	void run();
+	~Controller();
 
 private:
-	std::unique_ptr<Clock> clock;
-	std::unique_ptr<ClockDrawer> drawer;
+	Clock* clock;
+	ClockDrawer* drawer;
 };
