@@ -12,6 +12,7 @@ void ClockDrawer::draw()
 	cout << top << endl;
 	cout << topSides << endl;
 	cout << topSides << endl;
+	cout << mid << endl;
 	cout << botSides << endl;
 	cout << botSides << endl;
 	cout << bot << endl;
@@ -34,17 +35,56 @@ void ClockDrawer::setDigits(std::vector<int> digits)
 
 void ClockDrawer::constructStrings()
 {
-	top = " top string ";
-	topSides = " top side string ";
-	mid = " mid string ";
-	botSides = " bot sides string ";
-	bot = "bot string ";
+	top = borderSideElement;
+	for (int i = 0; i < digits.size(); i++)
+	{
+		if (i != 0 && i % 2 == 0)
+			top += indent + ' ' + indent;
+		top += indent + " " + getSegment(digits[i], TOP_SEGMENT) + " ";
+	}
+	top += indent + borderSideElement;
+
+	topSides = borderSideElement;
+	for (int i = 0; i < digits.size(); i++)
+	{
+		if (i != 0 && i % 2 == 0)
+			topSides += indent + dot + indent;
+		topSides += indent + getSegment(digits[i], TOP_LEFT_SEGMENT) + "   " + getSegment(digits[i], TOP_RIGHT_SEGMENT);
+	}
+	topSides += indent + borderSideElement;
+
+	mid = borderSideElement;
+	for (int i = 0; i < digits.size(); i++)
+	{
+		if (i != 0 && i % 2 == 0)
+			mid += indent + ' ' + indent;
+		mid += indent + " " + getSegment(digits[i], MID_SEGMENT) + " ";
+	}
+	mid += indent + borderSideElement;
+
+	botSides = borderSideElement;
+	for (int i = 0; i < digits.size(); i++)
+	{
+		if (i != 0 && i % 2 == 0)
+			botSides += indent + dot + indent;
+		botSides += indent + getSegment(digits[i], BOT_LEFT_SEGMENT) + "   " + getSegment(digits[i], BOT_RIGHT_SEGMENT);
+	}
+	botSides += indent + borderSideElement;
+
+	bot = borderSideElement;
+	for (int i = 0; i < digits.size(); i++)
+	{
+		if (i != 0 && i % 2 == 0)
+			bot += indent + ' ' + indent;
+		bot += indent + " " + getSegment(digits[i], BOT_SEGMENT) + " ";
+	}
+	bot += indent + borderSideElement;
 }
 
-std::string ClockDrawer::getSegment(int digitIndex, int segment)
+std::string ClockDrawer::getSegment(ClockDigit& digit, int segment)
 {
 	if (segment == 0 || segment == 3 || segment == 6)
-		return digits[digitIndex].isSegmentShown(segment) ? horizontalSegment : string(horizontalSegment.size(), ' ');
+		return digit.isSegmentShown(segment) ? horizontalSegment : string(horizontalSegment.size(), ' ');
 	else
-		return digits[digitIndex].isSegmentShown(segment) ? verticalSegment : string(verticalSegment.size(), ' ');
+		return digit.isSegmentShown(segment) ? verticalSegment : string(verticalSegment.size(), ' ');
 }

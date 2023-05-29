@@ -17,7 +17,7 @@ public:
 
 private:
 	void constructStrings();
-	std::string getSegment(int digitIndex, int segment);
+	std::string getSegment(ClockDigit& digit, int segment);
 
 	int width;
 	std::vector<ClockDigit> digits;
@@ -27,11 +27,11 @@ private:
 	std::string botSides;
 	std::string bot;
 	
-	const char borderTopElement = '_';
+	const char borderTopElement = '-';
 	const char borderBottomElement = '-';
 	const char borderSideElement = '|';
 	const char dot = '*';
 	const std::string horizontalSegment = "- -";
 	const std::string verticalSegment = "|";
-
+	const std::string indent = " ";
 };
