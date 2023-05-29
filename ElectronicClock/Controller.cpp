@@ -14,7 +14,7 @@ void Controller::run()
 		drawer->setDigits(clock->getClockDigits());
 
 		drawer->draw();
-		std::this_thread::sleep_for(std::chrono::seconds(1));
+		std::this_thread::sleep_for(std::chrono::milliseconds(970));
 	}
 }
 

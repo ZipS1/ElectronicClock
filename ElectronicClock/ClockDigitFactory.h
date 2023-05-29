@@ -5,7 +5,7 @@
 static class ClockDigitFactory
 {
 public:
-	static ClockDigit* createClockDigit(int digit);
+	static ClockDigit createClockDigit(int digit);
 
 private:
 	static const bool zeroPattern[SEGMENTS_AMOUNT];

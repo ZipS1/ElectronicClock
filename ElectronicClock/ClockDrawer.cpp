@@ -12,7 +12,9 @@ void ClockDrawer::draw()
 	cout << top << endl;
 	cout << topSides << endl;
 	cout << topSides << endl;
+	cout << topSides << endl;
 	cout << mid << endl;
+	cout << botSides << endl;
 	cout << botSides << endl;
 	cout << botSides << endl;
 	cout << bot << endl;
@@ -23,11 +25,7 @@ void ClockDrawer::setDigits(std::vector<int> digits)
 {
 	this->digits.clear();
 	for (auto& digit : digits)
-	{
-		ClockDigit* digitPtr = ClockDigitFactory::createClockDigit(digit);
-		this->digits.push_back(*digitPtr);
-		delete digitPtr;
-	}
+		this->digits.push_back(ClockDigitFactory::createClockDigit(digit));
 }
 
 void ClockDrawer::constructStrings()

@@ -8,7 +8,7 @@
 #include "BaseDrawer.h"
 #include "ClockDigitFactory.h"
 
-class ClockDrawer : public BaseDrawer
+class ClockDrawer : public BaseClockDrawer
 {
 public:
 	void draw() override;
@@ -33,7 +33,7 @@ private:
 	const char borderBottomElement = '-';
 	const char borderSideElement = '|';
 	const std::string dot = "*";
-	const std::string horizontalSegment = " - - ";
+	const std::string horizontalSegment = "# # #";
 	const std::string verticalSegment = "|";
-	const std::string indent = std::string(1, ' ');
+	const std::string indent = std::string(2, ' ');
 };
