@@ -21,9 +21,6 @@ void ClockDrawer::draw()
 
 void ClockDrawer::setDigits(std::vector<int> digits)
 {
-	if (digits.size() != 6)
-		throw exception("There should be exactly 6 digits");
-
 	this->digits.clear();
 	for (auto& digit : digits)
 	{
@@ -35,55 +32,42 @@ void ClockDrawer::setDigits(std::vector<int> digits)
 
 void ClockDrawer::constructStrings()
 {
-	top = borderSideElement;
-	for (int i = 0; i < digits.size(); i++)
-	{
-		if (i != 0 && i % 2 == 0)
-			top += indent + ' ' + indent;
-		top += indent + " " + getSegment(digits[i], TOP_SEGMENT) + " ";
-	}
-	top += indent + borderSideElement;
-
-	topSides = borderSideElement;
-	for (int i = 0; i < digits.size(); i++)
-	{
-		if (i != 0 && i % 2 == 0)
-			topSides += indent + dot + indent;
-		topSides += indent + getSegment(digits[i], TOP_LEFT_SEGMENT) + "   " + getSegment(digits[i], TOP_RIGHT_SEGMENT);
-	}
-	topSides += indent + borderSideElement;
-
-	mid = borderSideElement;
-	for (int i = 0; i < digits.size(); i++)
-	{
-		if (i != 0 && i % 2 == 0)
-			mid += indent + ' ' + indent;
-		mid += indent + " " + getSegment(digits[i], MID_SEGMENT) + " ";
-	}
-	mid += indent + borderSideElement;
-
-	botSides = borderSideElement;
-	for (int i = 0; i < digits.size(); i++)
-	{
-		if (i != 0 && i % 2 == 0)
-			botSides += indent + dot + indent;
-		botSides += indent + getSegment(digits[i], BOT_LEFT_SEGMENT) + "   " + getSegment(digits[i], BOT_RIGHT_SEGMENT);
-	}
-	botSides += indent + borderSideElement;
-
-	bot = borderSideElement;
-	for (int i = 0; i < digits.size(); i++)
-	{
-		if (i != 0 && i % 2 == 0)
-			bot += indent + ' ' + indent;
-		bot += indent + " " + getSegment(digits[i], BOT_SEGMENT) + " ";
-	}
-	bot += indent + borderSideElement;
+	top = constructHorizontalString(TOP_SEGMENT);
+	topSides = constructVerticalString(TOP_LEFT_SEGMENT, TOP_RIGHT_SEGMENT);
+	mid = constructHorizontalString(MID_SEGMENT);
+	botSides = constructVerticalString(BOT_LEFT_SEGMENT, BOT_RIGHT_SEGMENT);
+	bot = constructHorizontalString(BOT_SEGMENT);
 }
 
-std::string ClockDrawer::getSegment(ClockDigit& digit, int segment)
+string ClockDrawer::constructVerticalString(int leftSegment, int rightSegment)
 {
-	if (segment == 0 || segment == 3 || segment == 6)
+	string str = string(1, borderSideElement);
+	for (int i = 0; i < digits.size(); i++)
+	{
+		if (i != 0 && i % 2 == 0)
+			str += indent + dot + indent;
+		str += indent + getSegment(digits[i], leftSegment) + string(3, ' ') + getSegment(digits[i], rightSegment);
+	}
+	str += indent + borderSideElement;
+	return str;
+}
+
+string ClockDrawer::constructHorizontalString(int segment)
+{
+	string str = string(1, borderSideElement);
+	for (int i = 0; i < digits.size(); i++)
+	{
+		if (i != 0 && i % 2 == 0)
+			str += indent + string(dot.size(), ' ') + indent;
+		str += indent + getSegment(digits[i], segment);
+	}
+	str += indent + borderSideElement;
+	return str;
+}
+
+string ClockDrawer::getSegment(ClockDigit& digit, int segment)
+{
+	if (segment == TOP_SEGMENT || segment == MID_SEGMENT || segment == BOT_SEGMENT)
 		return digit.isSegmentShown(segment) ? horizontalSegment : string(horizontalSegment.size(), ' ');
 	else
 		return digit.isSegmentShown(segment) ? verticalSegment : string(verticalSegment.size(), ' ');

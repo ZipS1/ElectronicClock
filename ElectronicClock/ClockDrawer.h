@@ -3,7 +3,6 @@
 #include <string>
 #include <iostream>
 #include <stdlib.h>
-#include <format>
 
 #include "constants.h"
 #include "BaseDrawer.h"
@@ -17,9 +16,12 @@ public:
 
 private:
 	void constructStrings();
+	std::string constructVerticalString(int leftSegment, int rightSegment);
+	std::string constructHorizontalString(int segment);
 	std::string getSegment(ClockDigit& digit, int segment);
 
 	int width;
+	int digitWidth;
 	std::vector<ClockDigit> digits;
 	std::string top;
 	std::string topSides;
@@ -30,8 +32,8 @@ private:
 	const char borderTopElement = '-';
 	const char borderBottomElement = '-';
 	const char borderSideElement = '|';
-	const char dot = '*';
-	const std::string horizontalSegment = "- -";
+	const std::string dot = "*";
+	const std::string horizontalSegment = " - - ";
 	const std::string verticalSegment = "|";
-	const std::string indent = " ";
+	const std::string indent = std::string(1, ' ');
 };
