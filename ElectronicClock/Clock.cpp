@@ -5,9 +5,6 @@ Clock::Clock()
 	tick();
 }
 
-/// <summary>
-/// Updates the information about current time
-/// </summary>
 void Clock::tick()
 {
 	time_t nowTime = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
