@@ -136,9 +136,6 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="clockdesign.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="BaseDrawer.h" />
     <ClInclude Include="Clock.h" />
     <ClInclude Include="ClockDigit.h" />

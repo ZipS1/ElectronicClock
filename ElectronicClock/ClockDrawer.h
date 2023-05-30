@@ -12,7 +12,7 @@ class ClockDrawer : public BaseClockDrawer
 {
 public:
 	void draw() override;
-	void setDigits(std::vector<int> digits);
+	void setDigits(std::vector<int> digits) override;
 
 private:
 	void constructStrings();

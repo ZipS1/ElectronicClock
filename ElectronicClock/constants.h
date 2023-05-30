@@ -7,5 +7,5 @@
 #define BOT_LEFT_SEGMENT 4
 #define BOT_RIGHT_SEGMENT 5
 #define BOT_SEGMENT 6
-#define SEGMENTS_AMOUNT 7
 
+#define SEGMENTS_AMOUNT 7

@@ -7,21 +7,11 @@ Clock::Clock()
 
 void Clock::tick()
 {
-	time_t nowTime = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-	tm* timeNow = localtime(&nowTime);
-	this->hours = timeNow->tm_hour;
-	this->minutes = timeNow->tm_min;
-	this->seconds = timeNow->tm_sec;
-}
-
-int Clock::getHours()
-{
-	return hours;
-}
-
-int Clock::getMinutes()
-{
-	return minutes;
+	time_t timeOfTime_t = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+	tm* time = localtime(&timeOfTime_t);
+	hours = time->tm_hour;
+	minutes = time->tm_min;
+	seconds = time->tm_sec;
 }
 
 std::vector<int> Clock::getClockDigits()

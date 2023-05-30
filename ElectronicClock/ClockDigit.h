@@ -4,7 +4,6 @@
 class ClockDigit
 {
 public:
-	ClockDigit();
 	ClockDigit(const bool* segments);
 	bool isSegmentShown(int segmentIndex);
 

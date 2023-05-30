@@ -10,8 +10,6 @@ class Clock
 public:
 	Clock();
 	void tick();
-	int getHours();
-	int getMinutes();
 	std::vector<int> getClockDigits();
 
 private:
