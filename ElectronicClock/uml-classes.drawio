@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-30T19:32:39.030Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="OOZjjEpdDoepCbI8ODRH" version="21.3.5" type="device">
+<mxfile host="app.diagrams.net" modified="2023-05-30T21:06:02.666Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="PbHuiL3ZpQLlP_4h09cs" version="21.3.5" type="device">
   <diagram name="Страница 1" id="pEO_j2EQ6qFxEmSEYGHo">
     <mxGraphModel dx="1877" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -35,16 +35,22 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="LWtCfERro_clsTXi9q6C-7" value="ClockDrawer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="200" y="384" width="250" height="86" as="geometry" />
+          <mxGeometry x="120" y="384" width="330" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="zUOMEFNpAB9mm9twxYRh-4" value="&lt;div&gt;void constructStrings();&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LWtCfERro_clsTXi9q6C-7">
+          <mxGeometry y="26" width="330" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="zUOMEFNpAB9mm9twxYRh-8" value="&lt;div&gt;void constructStrings();&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LWtCfERro_clsTXi9q6C-7">
+          <mxGeometry y="52" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="LWtCfERro_clsTXi9q6C-9" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="LWtCfERro_clsTXi9q6C-7" vertex="1">
-          <mxGeometry y="26" width="250" height="8" as="geometry" />
+          <mxGeometry y="78" width="330" height="10" as="geometry" />
         </mxCell>
         <mxCell id="LWtCfERro_clsTXi9q6C-10" value="+ draw()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="LWtCfERro_clsTXi9q6C-7" vertex="1">
-          <mxGeometry y="34" width="250" height="26" as="geometry" />
+          <mxGeometry y="88" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="zUOMEFNpAB9mm9twxYRh-3" value="+ setDigits(digitis: vector&amp;lt;ClockDigit&amp;gt;)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LWtCfERro_clsTXi9q6C-7">
-          <mxGeometry y="60" width="250" height="26" as="geometry" />
+          <mxGeometry y="114" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="LWtCfERro_clsTXi9q6C-23" value="ClockDigit" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="519" y="470" width="250" height="86" as="geometry" />
@@ -59,7 +65,7 @@
           <mxGeometry y="60" width="250" height="26" as="geometry" />
         </mxCell>
         <mxCell id="LWtCfERro_clsTXi9q6C-30" value="&amp;lt;&amp;lt;utility&amp;gt;&amp;gt;&lt;br&gt;ClockDigitFactory" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="569" y="80" width="200" height="334" as="geometry" />
+          <mxGeometry x="569" y="90" width="200" height="334" as="geometry" />
         </mxCell>
         <mxCell id="LWtCfERro_clsTXi9q6C-31" value="- zeroPattern[7]: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="LWtCfERro_clsTXi9q6C-30" vertex="1">
           <mxGeometry y="40" width="200" height="26" as="geometry" />

@@ -1,6 +1,7 @@
 #pragma once
 #include <thread>
 #include "Clock.h"
+#include "BaseDrawer.h"
 #include "ClockDrawer.h"
 
 class Controller
@@ -12,5 +13,5 @@ public:
 
 private:
 	Clock* clock;
-	ClockDrawer* drawer;
+	BaseClockDrawer* drawer;
 };
