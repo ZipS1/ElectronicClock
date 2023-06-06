@@ -11,5 +11,5 @@ ClockDigit::ClockDigit(const bool* segments)
 
 bool ClockDigit::isSegmentShown(Segment segment)
 {
-    return false;
+    return segments[static_cast<int>(segment)];
 }
