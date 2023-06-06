@@ -142,7 +142,6 @@
     <ClInclude Include="ClockDigitFactory.h" />
     <ClInclude Include="ClockDrawer.h" />
     <ClInclude Include="Controller.h" />
-    <ClInclude Include="constants.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="uml-classes.drawio" />

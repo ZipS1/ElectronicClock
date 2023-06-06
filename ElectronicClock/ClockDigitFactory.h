@@ -8,14 +8,14 @@ public:
 	static ClockDigit createClockDigit(int digit);
 
 private:
-	static const bool zeroPattern[SEGMENTS_AMOUNT];
-	static const bool onePattern[SEGMENTS_AMOUNT];
-	static const bool twoPattern[SEGMENTS_AMOUNT];
-	static const bool threePattern[SEGMENTS_AMOUNT];
-	static const bool fourPattern[SEGMENTS_AMOUNT];
-	static const bool fivePattern[SEGMENTS_AMOUNT];
-	static const bool sixPattern[SEGMENTS_AMOUNT];
-	static const bool sevenPattern[SEGMENTS_AMOUNT];
-	static const bool eightPattern[SEGMENTS_AMOUNT];
-	static const bool ninePattern[SEGMENTS_AMOUNT];
+	static const bool zeroPattern[ClockDigit::segmentsAmount];
+	static const bool onePattern[ClockDigit::segmentsAmount];
+	static const bool twoPattern[ClockDigit::segmentsAmount];
+	static const bool threePattern[ClockDigit::segmentsAmount];
+	static const bool fourPattern[ClockDigit::segmentsAmount];
+	static const bool fivePattern[ClockDigit::segmentsAmount];
+	static const bool sixPattern[ClockDigit::segmentsAmount];
+	static const bool sevenPattern[ClockDigit::segmentsAmount];
+	static const bool eightPattern[ClockDigit::segmentsAmount];
+	static const bool ninePattern[ClockDigit::segmentsAmount];
 };

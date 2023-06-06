@@ -30,14 +30,14 @@ void ClockDrawer::setDigits(std::vector<int> digits)
 
 void ClockDrawer::constructStrings()
 {
-	top = constructHorizontalString(TOP_SEGMENT);
-	topSides = constructVerticalString(TOP_LEFT_SEGMENT, TOP_RIGHT_SEGMENT);
-	mid = constructHorizontalString(MID_SEGMENT);
-	botSides = constructVerticalString(BOT_LEFT_SEGMENT, BOT_RIGHT_SEGMENT);
-	bot = constructHorizontalString(BOT_SEGMENT);
+	top = constructHorizontalString(Segment::Top);
+	topSides = constructVerticalString(Segment::TopLeft, Segment::TopRight);
+	mid = constructHorizontalString(Segment::Mid);
+	botSides = constructVerticalString(Segment::BotLeft, Segment::BotRight);
+	bot = constructHorizontalString(Segment::Bot);
 }
 
-string ClockDrawer::constructVerticalString(int leftSegment, int rightSegment)
+string ClockDrawer::constructVerticalString(Segment leftSegment, Segment rightSegment)
 {
 	string str = string(1, borderSideElement);
 	for (int i = 0; i < digits.size(); i++)
@@ -50,7 +50,7 @@ string ClockDrawer::constructVerticalString(int leftSegment, int rightSegment)
 	return str;
 }
 
-string ClockDrawer::constructHorizontalString(int segment)
+string ClockDrawer::constructHorizontalString(Segment segment)
 {
 	string str = string(1, borderSideElement);
 	for (int i = 0; i < digits.size(); i++)
@@ -63,9 +63,9 @@ string ClockDrawer::constructHorizontalString(int segment)
 	return str;
 }
 
-string ClockDrawer::getSegment(ClockDigit& digit, int segment)
+string ClockDrawer::getSegment(ClockDigit& digit, Segment segment)
 {
-	if (segment == TOP_SEGMENT || segment == MID_SEGMENT || segment == BOT_SEGMENT)
+	if (segment == Segment::Top || segment == Segment::Mid || segment == Segment::Bot)
 		return digit.isSegmentShown(segment) ? horizontalSegment : string(horizontalSegment.size(), ' ');
 	else
 		return digit.isSegmentShown(segment) ? verticalSegment : string(verticalSegment.size(), ' ');

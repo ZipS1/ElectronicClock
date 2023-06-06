@@ -1,13 +1,14 @@
 #pragma once
-#include "constants.h"
 
+enum class Segment {Top, TopLeft, TopRight, Mid, BotLeft, BotRight, Bot};
 class ClockDigit
 {
 public:
 	ClockDigit(const bool* segments);
-	bool isSegmentShown(int segmentIndex);
+	bool isSegmentShown(Segment segment);
+	static const size_t segmentsAmount = 7;
 
 private:
-	bool segments[SEGMENTS_AMOUNT];
-
+	bool segments[segmentsAmount];
 };
+

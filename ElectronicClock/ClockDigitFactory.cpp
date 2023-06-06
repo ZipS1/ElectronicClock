@@ -1,15 +1,15 @@
 #include "ClockDigitFactory.h"
 
-const bool ClockDigitFactory::zeroPattern[SEGMENTS_AMOUNT] = { 1,1,1,0,1,1,1 };
-const bool ClockDigitFactory::onePattern[SEGMENTS_AMOUNT] = { 0,0,1,0,0,1,0 };
-const bool ClockDigitFactory::twoPattern[SEGMENTS_AMOUNT] = { 1,0,1,1,1,0,1 };
-const bool ClockDigitFactory::threePattern[SEGMENTS_AMOUNT] = { 1,0,1,1,0,1,1 };
-const bool ClockDigitFactory::fourPattern[SEGMENTS_AMOUNT] = { 0,1,1,1,0,1,0 };
-const bool ClockDigitFactory::fivePattern[SEGMENTS_AMOUNT] = { 1,1,0,1,0,1,1 };
-const bool ClockDigitFactory::sixPattern[SEGMENTS_AMOUNT] = { 1,1,0,1,1,1,1 };
-const bool ClockDigitFactory::sevenPattern[SEGMENTS_AMOUNT] = { 1,0,1,0,0,1,0 };
-const bool ClockDigitFactory::eightPattern[SEGMENTS_AMOUNT] = { 1,1,1,1,1,1,1 };
-const bool ClockDigitFactory::ninePattern[SEGMENTS_AMOUNT] = { 1,1,1,1,0,1,1 };
+const bool ClockDigitFactory::zeroPattern[ClockDigit::segmentsAmount] = { 1,1,1,0,1,1,1 };
+const bool ClockDigitFactory::onePattern[ClockDigit::segmentsAmount] = { 0,0,1,0,0,1,0 };
+const bool ClockDigitFactory::twoPattern[ClockDigit::segmentsAmount] = { 1,0,1,1,1,0,1 };
+const bool ClockDigitFactory::threePattern[ClockDigit::segmentsAmount] = { 1,0,1,1,0,1,1 };
+const bool ClockDigitFactory::fourPattern[ClockDigit::segmentsAmount] = { 0,1,1,1,0,1,0 };
+const bool ClockDigitFactory::fivePattern[ClockDigit::segmentsAmount] = { 1,1,0,1,0,1,1 };
+const bool ClockDigitFactory::sixPattern[ClockDigit::segmentsAmount] = { 1,1,0,1,1,1,1 };
+const bool ClockDigitFactory::sevenPattern[ClockDigit::segmentsAmount] = { 1,0,1,0,0,1,0 };
+const bool ClockDigitFactory::eightPattern[ClockDigit::segmentsAmount] = { 1,1,1,1,1,1,1 };
+const bool ClockDigitFactory::ninePattern[ClockDigit::segmentsAmount] = { 1,1,1,1,0,1,1 };
 
 ClockDigit ClockDigitFactory::createClockDigit(int digit)
 {

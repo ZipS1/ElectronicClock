@@ -4,7 +4,6 @@
 #include <iostream>
 #include <stdlib.h>
 
-#include "constants.h"
 #include "BaseDrawer.h"
 #include "ClockDigitFactory.h"
 
@@ -16,9 +15,9 @@ public:
 
 private:
 	void constructStrings();
-	std::string constructVerticalString(int leftSegment, int rightSegment);
-	std::string constructHorizontalString(int segment);
-	std::string getSegment(ClockDigit& digit, int segment);
+	std::string constructVerticalString(Segment leftSegment, Segment rightSegment);
+	std::string constructHorizontalString(Segment segment);
+	std::string getSegment(ClockDigit& digit, Segment segment);
 
 	int width;
 	int digitWidth;
